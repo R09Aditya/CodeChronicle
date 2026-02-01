@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeChronicle</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <canvas id="matrix-bg"></canvas>
+    <nav>
+        <div class="logo">&lt;CodeChronicle /&gt;</div>
+        <div class="nav-links">
+            <a href="#timeline">Timeline</a>
+            <a href="#lang-map">Map</a>
+            <a href="#hall-of-fame">Legends</a>
+            <a href="#quiz">Quiz</a>
+        </div>
+    </nav>
+    <header>
+        <h1 class="hero-title">History of Code</h1>
+        <div class="hero-subtitle" id="typewriter"></div>
+        <div class="scroll-indicator">Scroll to Explore (1804 - 2026)</div>
+    </header>
+    <div class="container">
+        <h2 class="section-title">Timeline Explorer</h2>
+        <section class="controls" id="timeline-controls">
+            <input type="text" class="search-bar" placeholder="Filter by Year, Name, Tech..." id="search-input">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="language">Languages</button>
+            <button class="filter-btn" data-filter="person">Pioneers</button>
+            <button class="filter-btn" data-filter="tool">Tools</button>
+            <button class="filter-btn" data-filter="concept">Breakthroughs</button>
+        </section>
+        <div class="timeline-wrapper" id="timeline-container">
+            <div class="timeline-line"></div>
+        </div>
+    </div>
+    <div class="container">
+        <h2 class="section-title" id="lang-map">Language Genealogy</h2>
+        <div class="map-container" id="map-canvas">
+        </div>
+    </div>
+    <div class="container">
+        <h2 class="section-title" id="hall-of-fame">Hall of Fame</h2>
+        <div class="hall-grid" id="fame-grid">
+        </div>
+    </div>
+    <div class="container">
+        <h2 class="section-title" id="compare">Compare Eras</h2>
+        <div class="compare-container">
+            <div class="compare-col">
+                <select class="compare-select" id="comp-1"></select>
+                <div id="res-1" class="compare-data"></div>
+            </div>
+            <div class="compare-col">
+                <select class="compare-select" id="comp-2"></select>
+                <div id="res-2" class="compare-data"></div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <h2 class="section-title" id="quiz">Knowledge Check</h2>
+        <div class="quiz-container" id="quiz-app">
+            <h3 id="quiz-question" style="font-size: 1.5rem; margin-bottom: 1rem;">Question text</h3>
+            <div class="quiz-options" id="quiz-options"></div>
+            <div class="quiz-result" id="quiz-result"></div>
+            <button class="filter-btn" id="quiz-reset" style="margin-top:20px; display:none;">Restart Quiz</button>
+        </div>
+    </div>
+    <footer
+        style="text-align: center; padding: 4rem 2rem; color: var(--text-secondary); border-top: 1px solid var(--border); margin-top: 4rem;">
+        <p>&copy; 2026 Interactive Coding Timeline.</p>
+        <p style="font-size: 0.8rem; margin-top: 10px; opacity: 0.5;">Hint: ↑ ↑ ↓ ↓ ← → ← → B A</p>
+    </footer>
+    <div class="modal-overlay" id="modal">
+        <div class="modal-content">
+            <button class="close-modal" id="close-modal">&times;</button>
+            <div id="modal-body"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
