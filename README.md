@@ -53,22 +53,26 @@ CodeChronicle is an interactive website that showcases the history of programmin
 
 ## Project Structure
 
+```
 CodeChronicle/
 ├── index.html
 ├── style.css
 ├── script.js
 ├── images/
 └── README.md
+```
 
 ## Assets
 Coder profile images should be placed in the images folder using the first name of the person as the filename.
 
 Example:
+```
 images/
 ├── Ada.jpg
 ├── Alan.jpg
 ├── Grace.jpg
 ├── Dennis.jpg
+```
 
 ## How to Run
 1. Download or clone the repository

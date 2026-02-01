@@ -171,7 +171,7 @@ function openModal(e) {
 }
 function renderFame() {
     dom.fameGrid.innerHTML = db.coders.map(c => {
-        const firstName = c.name.split(" ")[0]; // Ada, Alan, Grace, etc.
+        const firstName = c.name.split(" ")[0];
 
         return `
         <div class="coder-card">
@@ -193,10 +193,22 @@ function renderFame() {
     }).join('');
 }
 
+let mapState = {
+    zoom: 1,
+    posX: 0,
+    posY: 0,
+    isDragging: false,
+    startX: 0,
+    startY: 0
+};
+
 function renderMap() {
-    dom.mapCanvas.innerHTML = '';
+    dom.mapCanvas.innerHTML = '<div id="map-inner" class="map-inner"></div>';
+    const inner = document.getElementById('map-inner');
+    
     const w = dom.mapCanvas.offsetWidth;
     const h = dom.mapCanvas.offsetHeight;
+
     db.languages.forEach(l => {
         if (l.children && l.children.length > 0) {
             l.children.forEach(childId => {
@@ -204,21 +216,20 @@ function renderMap() {
                 if (childObj) {
                     const line = document.createElement('div');
                     line.className = `connection-line line-${l.id}-${childId}`;
-                    const x1 = l.x;
-                    const y1 = l.y;
-                    const x2 = childObj.x;
-                    const y2 = childObj.y;
+                    const x1 = l.x, y1 = l.y;
+                    const x2 = childObj.x, y2 = childObj.y;
                     const length = Math.sqrt(Math.pow((x2 - x1) * (w / 100), 2) + Math.pow((y2 - y1) * (h / 100), 2));
                     const angle = Math.atan2((y2 - y1) * (h / 100), (x2 - x1) * (w / 100)) * 180 / Math.PI;
                     line.style.width = `${length}px`;
                     line.style.left = `${l.x}%`;
                     line.style.top = `${l.y + 1.5}%`;
                     line.style.transform = `rotate(${angle}deg)`;
-                    dom.mapCanvas.appendChild(line);
+                    inner.appendChild(line);
                 }
             });
         }
     });
+
     db.languages.forEach(l => {
         const node = document.createElement('div');
         node.className = 'lang-node';
@@ -226,9 +237,52 @@ function renderMap() {
         node.style.left = `${l.x}%`;
         node.style.top = `${l.y}%`;
         node.dataset.id = l.id;
-        node.onclick = () => highlightPath(l.id);
-        dom.mapCanvas.appendChild(node);
+        node.onclick = (e) => {
+            e.stopPropagation();
+            highlightPath(l.id);
+        };
+        inner.appendChild(node);
     });
+
+    setupMapInteractions();
+}
+
+function setupMapInteractions() {
+    const container = dom.mapCanvas;
+    const inner = document.getElementById('map-inner');
+
+    const updateTransform = () => {
+        inner.style.transform = `translate(${mapState.posX}px, ${mapState.posY}px) scale(${mapState.zoom})`;
+    };
+
+    container.onwheel = (e) => {
+        e.preventDefault();
+        const zoomSpeed = 0.001;
+        const delta = -e.deltaY;
+        const newZoom = Math.min(Math.max(0.5, mapState.zoom + delta * zoomSpeed), 3);
+        
+        mapState.zoom = newZoom;
+        updateTransform();
+    };
+
+    container.onmousedown = (e) => {
+        mapState.isDragging = true;
+        container.style.cursor = 'grabbing';
+        mapState.startX = e.clientX - mapState.posX;
+        mapState.startY = e.clientY - mapState.posY;
+    };
+
+    window.onmousemove = (e) => {
+        if (!mapState.isDragging) return;
+        mapState.posX = e.clientX - mapState.startX;
+        mapState.posY = e.clientY - mapState.startY;
+        updateTransform();
+    };
+
+    window.onmouseup = () => {
+        mapState.isDragging = false;
+        container.style.cursor = 'grab';
+    };
 }
 function highlightPath(rootId) {
     document.querySelectorAll('.lang-node').forEach(n => n.classList.remove('active'));
