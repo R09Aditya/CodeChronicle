@@ -416,16 +416,31 @@ function toggleMatrix(enable) {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
     }
 }
+function toggleSecretMode() {
+    const isActive = document.body.classList.toggle('terminal-mode');
+    toggleMatrix(isActive);
+    
+    if (isActive) {
+        alert("System Hack Detected: Matrix Mode Activated");
+    } else {
+        alert("System Restored");
+    }
+}
+const secretBtn = document.getElementById('secret-trigger');
+if (secretBtn) {
+    secretBtn.addEventListener('click', () => {
+        toggleSecretMode();
+    });
+}
 window.addEventListener('resize', () => { if (isMatrixRunning) initMatrix(); });
 const konami = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
 let kPos = 0;
+
 document.addEventListener('keydown', (e) => {
     if (e.key === konami[kPos]) {
         kPos++;
         if (kPos === konami.length) {
-            const isActive = document.body.classList.toggle('terminal-mode');
-            toggleMatrix(isActive);
-            alert(isActive ? "System Hack Detected: Matrix Mode Activated" : "System Restored");
+            toggleSecretMode();
             kPos = 0;
         }
     } else {

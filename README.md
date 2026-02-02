@@ -36,6 +36,7 @@ CodeChronicle is an interactive website that showcases the history of programmin
 ### Secret Terminal Mode
 - Activated using the Konami Code:
   ↑ ↑ ↓ ↓ ← → ← → B A
+  A secret button is also added instead of konami code to unlock the easter egg
 - Enables a matrix-style background animation
 - Switches the UI to a green terminal-inspired theme
 
