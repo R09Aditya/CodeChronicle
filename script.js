@@ -1,44 +1,44 @@
 const db = {
     events: [
-        { id: 1, year: 1804, title: "Jacquard Loom", category: "tool", desc: "Joseph Marie Jacquard invents a loom controlled by punched cards, an early ancestor of programmable machines.", importance: "major" },
-        { id: 2, year: 1843, title: "The First Algorithm", category: "person", desc: "Ada Lovelace writes the first algorithm intended for Charles Babbage's Analytical Engine.", importance: "major" },
-        { id: 3, year: 1936, title: "Turing Machine", category: "concept", desc: "Alan Turing defines the theoretical limit of computation.", importance: "major" },
-        { id: 4, year: 1945, title: "ENIAC", category: "tool", desc: "First electronic general-purpose computer. It was Turing-complete and digital.", importance: "major" },
-        { id: 5, year: 1947, title: "The Transistor", category: "tool", desc: "Bell Labs invents the transistor, replacing vacuum tubes and shrinking computers.", importance: "major" },
-        { id: 6, year: 1949, title: "Assembly Language", category: "language", desc: "Low-level symbolic code makes programming slightly easier than binary.", importance: "normal" },
-        { id: 7, year: 1952, title: "The Linker", category: "tool", desc: "Grace Hopper develops the first linker/compiler (A-0 System).", importance: "major" },
-        { id: 8, year: 1957, title: "Fortran", category: "language", desc: "Formula Translation. The first widely used high-level programming language.", importance: "major" },
-        { id: 9, year: 1958, title: "LISP", category: "language", desc: "John McCarthy invents LISP for AI research. Introduced garbage collection.", importance: "major" },
-        { id: 10, year: 1959, title: "COBOL", category: "language", desc: "Common Business Oriented Language. Designed for business use.", importance: "normal" },
-        { id: 11, year: 1965, title: "Moore's Law", category: "concept", desc: "Gordon Moore predicts the doubling of transistors on microchips every two years.", importance: "major" },
-        { id: 12, year: 1969, title: "ARPANET", category: "concept", desc: "The precursor to the Internet, connecting four universities.", importance: "major" },
-        { id: 13, year: 1970, title: "Unix Epoch", category: "tool", desc: "Unix development begins at Bell Labs. Time starts counting from Jan 1.", importance: "major" },
-        { id: 14, year: 1972, title: "C Language", category: "language", desc: "Dennis Ritchie creates C. It becomes the foundation of modern software.", importance: "major" },
-        { id: 15, year: 1974, title: "SQL", category: "language", desc: "Structured Query Language appears, revolutionizing database management.", importance: "major" },
-        { id: 16, year: 1976, title: "Apple I", category: "tool", desc: "Steve Wozniak designs the Apple I, kickstarting the personal computer revolution.", importance: "normal" },
-        { id: 17, year: 1983, title: "C++", category: "language", desc: "Bjarne Stroustrup adds classes to C.", importance: "major" },
-        { id: 18, year: 1983, title: "TCP/IP Standard", category: "concept", desc: "ARPANET switches to TCP/IP, birth of the modern Internet.", importance: "major" },
-        { id: 19, year: 1985, title: "Windows 1.0", category: "tool", desc: "Microsoft releases its first graphical operating system.", importance: "normal" },
-        { id: 20, year: 1989, title: "World Wide Web", category: "tool", desc: "Tim Berners-Lee proposes the WWW at CERN.", importance: "major" },
-        { id: 21, year: 1991, title: "Python & Linux", category: "language", desc: "Guido van Rossum releases Python. Linus Torvalds releases Linux kernel.", importance: "major" },
-        { id: 22, year: 1995, title: "Java, JS, PHP", category: "language", desc: "Massive year: Java, JavaScript, and PHP are all released.", importance: "major" },
-        { id: 23, year: 1998, title: "Google Search", category: "tool", desc: "Larry Page and Sergey Brin launch Google, indexing the web.", importance: "major" },
-        { id: 24, year: 2001, title: "Agile Manifesto", category: "concept", desc: "A new philosophy for software development focusing on iteration.", importance: "normal" },
-        { id: 25, year: 2004, title: "Gmail & Ajax", category: "tool", desc: "Google shows the world that web apps can be fast and interactive.", importance: "normal" },
-        { id: 26, year: 2006, title: "AWS Cloud", category: "concept", desc: "Amazon launches EC2/S3, starting the Cloud Computing era.", importance: "major" },
-        { id: 27, year: 2007, title: "The iPhone", category: "tool", desc: "Mobile computing goes mainstream, changing software interfaces forever.", importance: "major" },
-        { id: 28, year: 2008, title: "GitHub", category: "tool", desc: "Social coding and knowledge sharing become centralized.", importance: "major" },
-        { id: 29, year: 2009, title: "Bitcoin", category: "concept", desc: "Satoshi Nakamoto releases the first blockchain implementation.", importance: "major" },
-        { id: 30, year: 2009, title: "Go Language", category: "language", desc: "Google releases Go to solve concurrency and scale issues.", importance: "normal" },
-        { id: 31, year: 2010, title: "Rust", category: "language", desc: "Mozilla introduces Rust for memory safety.", importance: "normal" },
-        { id: 32, year: 2013, title: "Docker", category: "tool", desc: "Containerization standardizes deployment.", importance: "major" },
-        { id: 33, year: 2014, title: "Swift", category: "language", desc: "Apple releases Swift to replace Objective-C.", importance: "normal" },
-        { id: 34, year: 2015, title: "TensorFlow", category: "tool", desc: "Google open-sources TensorFlow, democratizing AI development.", importance: "normal" },
-        { id: 35, year: 2017, title: "Transformers", category: "concept", desc: "Google introduces the Transformer architecture, paving way for LLMs.", importance: "major" },
-        { id: 36, year: 2022, title: "ChatGPT", category: "concept", desc: "OpenAI releases ChatGPT. Generative AI becomes mainstream.", importance: "major" },
-        { id: 37, year: 2024, title: "AI Agents", category: "tool", desc: "Autonomous coding agents begin handling end-to-end tasks.", importance: "major" },
-        { id: 38, year: 2025, title: "Quantum API", category: "tool", desc: "First standardized cloud APIs for commercial quantum processors gain traction.", importance: "normal" },
-        { id: 39, year: 2026, title: "Neural IDEs", category: "concept", desc: "Experimental IDEs allow coding via intent-based neural inputs.", importance: "major" }
+        { id: 1, year: 1804, title: "Jacquard Loom", category: "tool", desc: "Joseph Marie Jacquard invents a loom controlled by punched cards, an early ancestor of programmable machines.", detail: "Its punch cards inspired later data storage ideas and influenced early computing pioneers.", importance: "major" },
+        { id: 2, year: 1843, title: "The First Algorithm", category: "person", desc: "Ada Lovelace writes the first algorithm intended for Charles Babbage's Analytical Engine.", detail: "Her notes also imagined machines creating art and music, expanding the idea of computation.", importance: "major" },
+        { id: 3, year: 1936, title: "Turing Machine", category: "concept", desc: "Alan Turing defines the theoretical limit of computation.", detail: "The model became a foundation for computer science, separating the computable from the impossible.", importance: "major" },
+        { id: 4, year: 1945, title: "ENIAC", category: "tool", desc: "First electronic general-purpose computer. It was Turing-complete and digital.", detail: "ENIAC proved electronic speedups were possible and ushered in the era of large-scale computing hardware.", importance: "major" },
+        { id: 5, year: 1947, title: "The Transistor", category: "tool", desc: "Bell Labs invents the transistor, replacing vacuum tubes and shrinking computers.", detail: "Smaller, cooler components made reliable machines and later consumer electronics feasible.", importance: "major" },
+        { id: 6, year: 1949, title: "Assembly Language", category: "language", desc: "Low-level symbolic code makes programming slightly easier than binary.", detail: "Mnemonics and labels let humans manage complex machine instructions at scale.", importance: "normal" },
+        { id: 7, year: 1952, title: "The Linker", category: "tool", desc: "Grace Hopper develops the first linker/compiler (A-0 System).", detail: "Reusable routines and automated linking opened the door to higher-level programming.", importance: "major" },
+        { id: 8, year: 1957, title: "Fortran", category: "language", desc: "Formula Translation. The first widely used high-level programming language.", detail: "It made scientific computing practical and proved high-level code could be efficient.", importance: "major" },
+        { id: 9, year: 1958, title: "LISP", category: "language", desc: "John McCarthy invents LISP for AI research. Introduced garbage collection.", detail: "Its list processing and functional ideas still influence AI and language design.", importance: "major" },
+        { id: 10, year: 1959, title: "COBOL", category: "language", desc: "Common Business Oriented Language. Designed for business use.", detail: "Readable syntax helped enterprises adopt software for data processing and reports.", importance: "normal" },
+        { id: 11, year: 1965, title: "Moore's Law", category: "concept", desc: "Gordon Moore predicts the doubling of transistors on microchips every two years.", detail: "The prediction became an industry planning target and benchmark for progress.", importance: "major" },
+        { id: 12, year: 1969, title: "ARPANET", category: "concept", desc: "The precursor to the Internet, connecting four universities.", detail: "Packet switching showed resilient, decentralized networking at scale.", importance: "major" },
+        { id: 13, year: 1970, title: "Unix Epoch", category: "tool", desc: "Unix development begins at Bell Labs. Time starts counting from Jan 1.", detail: "Unix tooling and philosophy went on to shape modern operating systems.", importance: "major" },
+        { id: 14, year: 1972, title: "C Language", category: "language", desc: "Dennis Ritchie creates C. It becomes the foundation of modern software.", detail: "Its portability let systems code move across hardware with minimal changes.", importance: "major" },
+        { id: 15, year: 1974, title: "SQL", category: "language", desc: "Structured Query Language appears, revolutionizing database management.", detail: "It standardized how humans query and manage relational data.", importance: "major" },
+        { id: 16, year: 1976, title: "Apple I", category: "tool", desc: "Steve Wozniak designs the Apple I, kickstarting the personal computer revolution.", detail: "Hobbyist kits turned personal computing into a consumer movement.", importance: "normal" },
+        { id: 17, year: 1983, title: "C++", category: "language", desc: "Bjarne Stroustrup adds classes to C.", detail: "Object-oriented features helped manage growing software complexity.", importance: "major" },
+        { id: 18, year: 1983, title: "TCP/IP Standard", category: "concept", desc: "ARPANET switches to TCP/IP, birth of the modern Internet.", detail: "A universal protocol stack allowed disparate networks to interconnect.", importance: "major" },
+        { id: 19, year: 1985, title: "Windows 1.0", category: "tool", desc: "Microsoft releases its first graphical operating system.", detail: "Graphical interfaces broadened computing beyond command lines.", importance: "normal" },
+        { id: 20, year: 1989, title: "World Wide Web", category: "tool", desc: "Tim Berners-Lee proposes the WWW at CERN.", detail: "Hypertext on the Internet opened the door to global information sharing.", importance: "major" },
+        { id: 21, year: 1991, title: "Python & Linux", category: "language", desc: "Guido van Rossum releases Python. Linus Torvalds releases Linux kernel.", detail: "Open-source culture accelerated collaboration and rapid iteration.", importance: "major" },
+        { id: 22, year: 1995, title: "Java, JS, PHP", category: "language", desc: "Massive year: Java, JavaScript, and PHP are all released.", detail: "The web gained portable apps, interactive pages, and server-side scripting.", importance: "major" },
+        { id: 23, year: 1998, title: "Google Search", category: "tool", desc: "Larry Page and Sergey Brin launch Google, indexing the web.", detail: "PageRank improved relevance and reshaped how information is discovered.", importance: "major" },
+        { id: 24, year: 2001, title: "Agile Manifesto", category: "concept", desc: "A new philosophy for software development focusing on iteration.", detail: "Teams embraced adaptive planning, collaboration, and continuous feedback.", importance: "normal" },
+        { id: 25, year: 2004, title: "Gmail & Ajax", category: "tool", desc: "Google shows the world that web apps can be fast and interactive.", detail: "Rich client interactions made the browser a viable app platform.", importance: "normal" },
+        { id: 26, year: 2006, title: "AWS Cloud", category: "concept", desc: "Amazon launches EC2/S3, starting the Cloud Computing era.", detail: "On-demand infrastructure shifted costs from capital to usage-based.", importance: "major" },
+        { id: 27, year: 2007, title: "The iPhone", category: "tool", desc: "Mobile computing goes mainstream, changing software interfaces forever.", detail: "Touch-first design and app ecosystems redefined user expectations.", importance: "major" },
+        { id: 28, year: 2008, title: "GitHub", category: "tool", desc: "Social coding and knowledge sharing become centralized.", detail: "Pull requests and social workflows made open collaboration mainstream.", importance: "major" },
+        { id: 29, year: 2009, title: "Bitcoin", category: "concept", desc: "Satoshi Nakamoto releases the first blockchain implementation.", detail: "It introduced decentralized consensus and digital scarcity.", importance: "major" },
+        { id: 30, year: 2009, title: "Go Language", category: "language", desc: "Google releases Go to solve concurrency and scale issues.", detail: "Designed for simplicity and concurrency in large systems.", importance: "normal" },
+        { id: 31, year: 2010, title: "Rust", category: "language", desc: "Mozilla introduces Rust for memory safety.", detail: "Borrowing and ownership models target safety without garbage collection.", importance: "normal" },
+        { id: 32, year: 2013, title: "Docker", category: "tool", desc: "Containerization standardizes deployment.", detail: "Lightweight containers made environments reproducible across machines.", importance: "major" },
+        { id: 33, year: 2014, title: "Swift", category: "language", desc: "Apple releases Swift to replace Objective-C.", detail: "A modern syntax and safety features improved Apple platform development.", importance: "normal" },
+        { id: 34, year: 2015, title: "TensorFlow", category: "tool", desc: "Google open-sources TensorFlow, democratizing AI development.", detail: "It standardized model building with dataflow graphs and large-scale training.", importance: "normal" },
+        { id: 35, year: 2017, title: "Transformers", category: "concept", desc: "Google introduces the Transformer architecture, paving way for LLMs.", detail: "Attention-based models enabled scaling and major NLP breakthroughs.", importance: "major" },
+        { id: 36, year: 2022, title: "ChatGPT", category: "concept", desc: "OpenAI releases ChatGPT. Generative AI becomes mainstream.", detail: "Conversational AI reached mass adoption and changed expectations of software assistants.", importance: "major" },
+        { id: 37, year: 2024, title: "AI Agents", category: "tool", desc: "Autonomous coding agents begin handling end-to-end tasks.", detail: "Tool-using systems started automating multi-step workflows.", importance: "major" },
+        { id: 38, year: 2025, title: "Quantum API", category: "tool", desc: "First standardized cloud APIs for commercial quantum processors gain traction.", detail: "Early standards aimed to make quantum services interoperable.", importance: "normal" },
+        { id: 39, year: 2026, title: "Neural IDEs", category: "concept", desc: "Experimental IDEs allow coding via intent-based neural inputs.", detail: "Research prototypes explore direct intent capture and adaptive tooling.", importance: "major" }
     ],
     coders: [
         { name: "Ada Lovelace", role: "The Prophet", quote: "The engine might compose elaborate and scientific pieces of music.", knownFor: "First Algorithm" },
@@ -122,6 +122,14 @@ const dom = {
 };
 let currentFilter = 'all';
 let searchQuery = '';
+function getTitleSlug(title) {
+    return title
+        .trim()
+        .toLowerCase()
+        .replace(/&/g, 'and')
+        .replace(/[^a-z0-9]+/g, '_')
+        .replace(/^_+|_+$/g, '');
+}
 function typeWriter(text, i) {
     if (i < text.length) {
         dom.subtitle.innerHTML += text.charAt(i);
@@ -146,22 +154,30 @@ function renderTimeline() {
         el.style.animationDelay = `${index * 0.05}s`;
         el.classList.add('animate-in');
         let tagClass = `tag-${e.category}`;
+        const imageName = getTitleSlug(e.title);
         el.innerHTML = `
             <div class="timeline-node"></div>
+            <div class="event-media">
+                <img class="event-image" src="timeline/${imageName}.jpg" alt="${e.title}" loading="lazy" decoding="async">
+            </div>
             <span class="event-year">${e.year}</span>
             <div class="event-title">${e.title}</div>
             <span class="event-tag ${tagClass}">${e.category}</span>
-            <div style="font-size: 0.9rem; color: var(--text-secondary); margin-top: 8px; line-height: 1.4;">${e.desc}</div>
+            <div class="event-desc">${e.desc}</div>
+            <div class="event-detail">${e.detail}</div>
         `;
         el.onclick = () => openModal(e);
         dom.timeline.appendChild(el);
     });
 }
 function openModal(e) {
+    const imageName = getTitleSlug(e.title);
     dom.modalBody.innerHTML = `
         <h2 style="color: var(--accent); margin-bottom: 0.5rem; font-size: 2rem;">${e.title}</h2>
         <h3 style="margin-bottom: 1.5rem; font-family: var(--font-mono); font-size: 1.5rem; color: var(--text-secondary);">${e.year}</h3>
-        <p style="font-size: 1.1rem; line-height: 1.7;">${e.desc}</p>
+        <img class="modal-image" src="timeline/${imageName}.jpg" alt="${e.title}">
+        <p class="modal-desc">${e.desc}</p>
+        <p class="modal-detail">${e.detail}</p>
         <div style="margin-top: 2rem; padding-top: 1rem; border-top: 1px solid var(--border); display: flex; gap: 10px;">
             <span class="event-tag tag-${e.category}">${e.category.toUpperCase()}</span>
             <span class="event-tag" style="background:#21262d; border: 1px solid var(--border);">${e.importance.toUpperCase()} IMPACT</span>
@@ -308,12 +324,13 @@ function initCompare() {
     dom.comp2.selectedIndex = 10;
     const renderComp = (id, target) => {
         const item = db.events.find(e => e.id == id);
+        const detailLine = item.detail ? `<br><span style="color:var(--text-secondary)">${item.detail}</span>` : '';
         target.innerHTML = `
             <h3 style="margin-bottom:1rem; color:var(--accent)">${item.title}</h3>
             <p><label>Category</label> ${item.category.toUpperCase()}</p>
             <p><label>Year</label> ${item.year}</p>
             <p><label>Impact</label> ${item.importance.toUpperCase()}</p>
-            <p style="border:none; display:block;"><label>Summary</label><br><span style="color:var(--text-primary)">${item.desc}</span></p>
+            <p style="border:none; display:block;"><label>Summary</label><br><span style="color:var(--text-primary)">${item.desc}</span>${detailLine}</p>
         `;
     };
     dom.comp1.addEventListener('change', (e) => renderComp(e.target.value, dom.res1));
